@@ -354,13 +354,18 @@
   }
 
   header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 16vw 0 16vw;
     background-color: black;
     color: white;
     height: 8vh;
+  }
+
+  .alignment-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 8vh;
+    min-width: 750px;
+    margin: 0 16vw 0 16vw;
   }
 
   #heading {
@@ -380,10 +385,10 @@
     align-content: flex-start;
     align-items: flex-start;
     flex-flow: row wrap;
-    gap: 16px;
+    gap: 14px;
+    min-width: 750px;
     background: white;
     margin: 6vh 16vw 0 16vw;
-    padding: 16px;
     border-radius: 8px 8px 0 0;
     height: 100vh;
   }
@@ -406,8 +411,10 @@
 
   .card {
     flex: 0 0 32%;
+    min-width: 240px;
     position: relative;
     border-radius: 6px;
+    margin-top: 14px;
     color: black;
     font-size: larger;
     text-align: center;
