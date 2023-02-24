@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="objects-lesson.js" defer></script>  <!--lessons: remember to defer-->
+    <link rel="stylesheet" href="objects-lesson.css">
+    <link rel="shortcut icon" href="#">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Lesson</title>
+</head>
+<body>
+    <header>
+        <div id="heading">
+            <img src="assets/book-open.svg" alt="open book icon">
+            <h2>MY LIBRARY</h2>
+        </div>
+        <button id="button-add" onclick="openForm()">NEW BOOK</button>
+    </header>
+    <div id="content">
+        <div id="container">
+        </div>
+    </div>
+    <div id="myForm">
+        <form id="addBook">
+            <h1>ADD NEW BOOK</h1>
+            <div>
+                <label for="title">TITLE</label>
+                <input type="text" id="title" placeholder="e.g. The Lord of the Rings" name="title" required>
+            </div>
+            <div>
+                <label for="author">AUTHOR</label>
+                <input type="text" id="author" placeholder="e.g. J. R. R. Tolkien" name="author" required>
+            </div>
+            <div>
+                <label for="pages">PAGES</label>
+                <input type="text" id="pages" placeholder="e.g. 1234" name="pages" required>
+            </div>     
+            <div>
+                <input type="checkbox" id="checkbox" name="read">
+                <label for="checkbox">I've read this book</label>
+            </div>
+            <div id="popupButtons">
+                <button type="button" onclick="closeForm()">CANCEL</button>
+                <button type="submit" form="addBook" id="submitButton">ADD</button>
+            </div>                  
+        </form>
+    </div>
+</body>
+</html>
