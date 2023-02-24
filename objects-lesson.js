@@ -15,7 +15,7 @@ function Book(title, author, pages, read) {
 //creates a book and puts it in the library array
 function addBookToLibrary(title, author, pages, read) {
     const book = new Book(title, author, pages, read);
-    myLibrary.push(book);
+    myLibrary.unshift(book);
 }
 
 //displays the library on a series of cards in the site container
@@ -59,17 +59,22 @@ function addBookViaForm() {
     var pages = document.getElementById("pages").value;
     var checkbox = document.getElementById("checkbox").value;
 
-
-    console.log(title, author, pages, checkbox);
+    if (checkbox === 'on') {
+        checkbox = 'have read'
+    } else {
+        checkbox = 'have not read'
+    }
 
     addBookToLibrary(title, author, pages, checkbox);
 
     const container = document.getElementById("container");
 
+    const cards = document.getElementsByClassName("card");
+
+    const firstDisplayedCard = cards[0];
+
     const card = document.createElement('div');
     card.setAttribute('class', 'card');
-
-    container.appendChild(card);
 
     const image = document.createElement('img');
 
@@ -78,17 +83,19 @@ function addBookViaForm() {
     image.setAttribute('src', 'assets/book.svg', 'alt', 'book icon');
 
     div.setAttribute('class', 'book-info');
-    div.textContent = myLibrary[length-1].info();
+    div.textContent = myLibrary[0].info();
 
     card.appendChild(image);
     card.appendChild(div);
+
+    container.insertBefore(card, firstDisplayedCard);
 }
 
 //listen for the submit button, then add a book using the form and close the form
-document.getElementById("submitButton").addEventListener("click", function(){
+document.getElementById("submitButton").addEventListener("click", function(event){
+    closeForm();
     event.preventDefault();
     addBookViaForm();
-    closeForm();
 });
 
 //a temporary collection of books for testing purposes
