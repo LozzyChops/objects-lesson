@@ -1,5 +1,5 @@
 // an array to hold the books
-let myLibrary = [];
+const myLibrary = [];
 
 //a constructor function for books
 function Book(title, author, pages, read) {
@@ -43,12 +43,6 @@ function displayLibrary() {
 //makes the form visible
 function openForm() {
     document.getElementById("addBook").style.display = "flex";
-    const title = document.getElementById("title");
-    const author = document.getElementById("author");
-    const pages = document.getElementById("pages");
-    title.setAttribute("required", "");
-    author.setAttribute("required", "");
-    pages.setAttribute("required", "");
 }
 
 //makes the form invisible
@@ -62,15 +56,10 @@ function addBookViaForm() {
     const title = document.getElementById("title").value;
     const author = document.getElementById("author").value;
     const pages = document.getElementById("pages").value;
-    var checkbox = document.getElementsByName("checkbox").value;
+    const checkbox = document.getElementById("checkbox").checked;
+    const haveRead = checkbox ? "have read" : "have not read";
 
-    if (checkbox) {
-        checkbox = "have not read";
-    } else {
-        checkbox = "have read";
-    }
-
-    addBookToLibrary(title, author, pages, checkbox);
+    addBookToLibrary(title, author, pages, haveRead);
 
     const container = document.getElementById("container");
 
@@ -97,8 +86,8 @@ function addBookViaForm() {
 }
 
 //listen for the submit button, then add a book using the form and close the form
-document.getElementById("submitButton").addEventListener("click", function(event){
-    //event.preventDefault();
+document.getElementById("addBook").addEventListener("submit", function(event){
+    event.preventDefault();  //stops the form submission from trying to reach a server
     addBookViaForm();
     closeForm();
 });
