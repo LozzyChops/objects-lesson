@@ -23,30 +23,28 @@
         <div id="container">
         </div>
     </div>
-    <div id="myForm">
-        <form id="addBook">
-            <h1>ADD NEW BOOK</h1>
-            <div>
-                <label for="title">TITLE</label>
-                <input type="text" id="title" placeholder="e.g. The Lord of the Rings" name="title" required>
-            </div>
-            <div>
-                <label for="author">AUTHOR</label>
-                <input type="text" id="author" placeholder="e.g. J. R. R. Tolkien" name="author" required>
-            </div>
-            <div>
-                <label for="pages">PAGES</label>
-                <input type="text" id="pages" placeholder="e.g. 1234" name="pages" required>
-            </div>     
-            <div>
-                <input type="checkbox" id="checkbox" name="read">
-                <label for="checkbox">I've read this book</label>
-            </div>
-            <div id="popupButtons">
-                <button type="button" onclick="closeForm()">CANCEL</button>
-                <button type="submit" form="addBook" id="submitButton">ADD</button>
-            </div>                  
-        </form>
-    </div>
+    <form id="addBook">
+        <h1>ADD NEW BOOK</h1>
+        <div>
+            <label for="title">TITLE</label>
+            <input type="text" id="title" placeholder="e.g. The Lord of the Rings" name="title">
+        </div>
+        <div>
+            <label for="author">AUTHOR</label>
+            <input type="text" id="author" placeholder="e.g. J. R. R. Tolkien" name="author">
+        </div>
+        <div>
+            <label for="pages">PAGES</label>
+            <input type="text" id="pages" placeholder="e.g. 1234" name="pages">
+        </div>     
+        <div class>
+            <input type="checkbox" id="checkbox" name="checkbox">
+            <label for="checkbox">I've read this book</label>
+        </div>
+        <div id="popupButtons">
+            <button type="button" onclick="closeForm()">CANCEL</button>
+            <button type="submit" form="addBook" id="submitButton">ADD</button>
+        </div>                  
+    </form>
 </body>
 </html>

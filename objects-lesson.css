@@ -432,8 +432,12 @@
     transform: translate(-50%, -50%);
   }
 
-  #myForm {
+  #addBook {
     display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 82px 12px 82px 12px;
+    row-gap: 16px;
     border: solid black 1px;
     border-radius: 6px;
     position: absolute;
@@ -446,14 +450,6 @@
     overflow: auto;
     background-color: white;
     font-weight: bold;
-  }
-
-  #myForm>form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 82px 12px 82px 12px;
-    row-gap: 16px;
   }
 
   form>h1 {

@@ -29,11 +29,9 @@ function displayLibrary() {
        container.appendChild(card);
 
        const image = document.createElement('img');
-
-       const div = document.createElement('div');
-
        image.setAttribute('src', 'assets/book.svg', 'alt', 'book icon');
 
+       const div = document.createElement('div');
        div.setAttribute('class', 'book-info');
        div.textContent = book.info();
 
@@ -44,25 +42,32 @@ function displayLibrary() {
 
 //makes the form visible
 function openForm() {
-    document.getElementById("myForm").style.display = "block";
+    document.getElementById("addBook").style.display = "flex";
+    const title = document.getElementById("title");
+    const author = document.getElementById("author");
+    const pages = document.getElementById("pages");
+    title.setAttribute("required", "");
+    author.setAttribute("required", "");
+    pages.setAttribute("required", "");
 }
 
 //makes the form invisible
 function closeForm() {
-    document.getElementById("myForm").style.display = "none";
+    document.getElementById("addBook").reset(); //resets the form, so it doesn't remember the old values
+    document.getElementById("addBook").style.display = "none";
 }
 
 //makes a book from the user input in the form
 function addBookViaForm() {
-    var title = document.getElementById("title").value;
-    var author = document.getElementById("author").value;
-    var pages = document.getElementById("pages").value;
-    var checkbox = document.getElementById("checkbox").value;
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const pages = document.getElementById("pages").value;
+    var checkbox = document.getElementsByName("checkbox").value;
 
-    if (checkbox === 'on') {
-        checkbox = 'have read'
+    if (checkbox) {
+        checkbox = "have not read";
     } else {
-        checkbox = 'have not read'
+        checkbox = "have read";
     }
 
     addBookToLibrary(title, author, pages, checkbox);
@@ -93,9 +98,9 @@ function addBookViaForm() {
 
 //listen for the submit button, then add a book using the form and close the form
 document.getElementById("submitButton").addEventListener("click", function(event){
-    closeForm();
-    event.preventDefault();
+    //event.preventDefault();
     addBookViaForm();
+    closeForm();
 });
 
 //a temporary collection of books for testing purposes
