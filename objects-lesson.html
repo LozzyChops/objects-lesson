@@ -23,7 +23,7 @@
         <div id="container">
         </div>
     </div>
-    <form id="addBook">
+    <form id="add-book">
         <h1>ADD NEW BOOK</h1>
         <div>
             <label for="title">TITLE</label>
@@ -35,15 +35,15 @@
         </div>
         <div>
             <label for="pages">PAGES</label>
-            <input type="text" id="pages" placeholder="e.g. 1234" name="pages" required/>
+            <input type="number" id="pages" placeholder="e.g. 1234" name="pages" required/>
         </div>     
         <div class>
-            <input type="checkbox" id="checkbox" name="checkbox">
+            <input type="checkbox" id="checkbox" name="checkbox"/>
             <label for="checkbox">I've read this book</label>
         </div>
-        <div id="popupButtons">
+        <div id="popup-buttons">
             <button type="button" onclick="closeForm()">CANCEL</button>
-            <button type="submit" form="addBook" id="submitButton">ADD</button>
+            <button type="submit" form="add-book" id="submitButton">ADD</button>
         </div>                  
     </form>
 </body>

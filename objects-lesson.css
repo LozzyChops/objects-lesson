@@ -376,7 +376,11 @@
   #heading>img {
     height: 4vh;
     width: auto;
-    filter: invert(100%) sepia(0%) saturate(7484%) hue-rotate(104deg) brightness(100%) contrast(102%);;
+    filter: invert(100%) sepia(0%) saturate(7484%) hue-rotate(104deg) brightness(100%) contrast(102%);
+  }
+
+  #content{
+    padding: 6vh 16vw 0 16vw;
   }
 
   #container {
@@ -385,10 +389,10 @@
     align-content: flex-start;
     align-items: flex-start;
     flex-flow: row wrap;
+    padding: 14px 0 14px 0;
     gap: 14px;
     min-width: 750px;
     background: white;
-    margin: 6vh 16vw 0 16vw;
     border-radius: 8px 8px 0 0;
     height: 100vh;
   }
@@ -409,12 +413,13 @@
     width: 120px;
   }
 
-  .card {
+  .card-container  {
+    display: flex;
+    flex-direction: column;
     flex: 0 0 32%;
     min-width: 240px;
     position: relative;
     border-radius: 6px;
-    margin-top: 14px;
     color: black;
     font-size: larger;
     text-align: center;
@@ -425,14 +430,40 @@
     width: 100%;
   }
 
-  .book-info {
+  .text-container {
     position: absolute;
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
-  #addBook {
+  .pages-container {
+    position: absolute;
+    bottom: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .interactive-parts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    align-self: center;
+    max-width: 180px;
+  }
+
+  .toggle-container {
+    display: flex;
+    gap: 10px;
+  }
+
+  .interactive-parts>img {
+    height: 20px;
+    width: 20px;
+  }
+
+  #add-book {
     display: none;
     flex-direction: column;
     align-items: center;
@@ -456,14 +487,14 @@
     margin: 0 0 40px 0;
   }
 
-  #popupButtons {
+  #popup-buttons {
     display: flex;
     flex-direction: row;
     margin-top: 20px;
     gap: 20px; 
   }
 
-  #popupButtons>button {
+  #popup-buttons>button {
     height: 40px;
     width: 120px;
   }
