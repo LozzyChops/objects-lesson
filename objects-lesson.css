@@ -359,7 +359,7 @@
     height: 8vh;
   }
 
-  .alignment-container {
+  #alignment-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -384,7 +384,7 @@
   }
 
   #container {
-    display: flex;
+    display: block;
     justify-content: flex-start;
     align-content: flex-start;
     align-items: flex-start;
@@ -395,6 +395,12 @@
     background: white;
     border-radius: 8px 8px 0 0;
     height: 100vh;
+  }
+
+  #temporary-message {
+    text-align: center;
+    font-size: xx-large;
+    justify-content: center;
   }
 
   h2 {
@@ -430,7 +436,7 @@
     width: 100%;
   }
 
-  .text-container {
+  .title-container {
     position: absolute;
     top: 35%;
     left: 50%;
@@ -458,9 +464,11 @@
     gap: 10px;
   }
 
-  .interactive-parts>img {
-    height: 20px;
-    width: 20px;
+  .interactive-parts>button {
+    height: 24px;
+    width: 24px;
+    padding: 0;
+    background: url(./assets/trash-2.svg);
   }
 
   #add-book {
