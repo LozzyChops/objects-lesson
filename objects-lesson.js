@@ -1,25 +1,20 @@
 const myLibrary = new Array();
 let containerReady;
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-};
-
-Book.prototype.stringTitleByAuthor = function() {
-    return `${this.title}, by ${this.author}`
-};
-
-Book.prototype.stringNumberOfPages = function() {
-    return `${this.pages} pages`
-};
-
-function createBook(title, author, pages, read) {
-    const book = new Book(title, author, pages, read);
-    return book;
-};
+class Book {
+    constructor (title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+    stringTitleByAuthor = function() {
+        return `${this.title}, by ${this.author}`
+    }
+    stringNumberOfPages = function() {
+        return `${this.pages} pages`
+    }
+}
 
 function displayEmptyLibrary() {
     const container = document.querySelector('#container');
@@ -142,7 +137,7 @@ function addBookViaForm() {
     const checkbox = document.getElementById("checkbox").checked;
     const read = checkbox ? "have read" : "have not read";
 
-    newBook = createBook(title, author, pages, read);
+    newBook = new Book(title, author, pages, read);
 
     if (!containerReady) {
         prepareDisplay();
