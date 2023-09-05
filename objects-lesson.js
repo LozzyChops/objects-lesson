@@ -8,12 +8,14 @@ class Book {
         this.pages = pages;
         this.read = read;
     }
-    stringTitleByAuthor = function() {
-        return `${this.title}, by ${this.author}`
-    }
-    stringNumberOfPages = function() {
-        return `${this.pages} pages`
-    }
+}
+
+Book.prototype.stringTitleByAuthor = function () {
+    return `${this.title}, by ${this.author}`
+}
+
+Book.prototype.stringNumberOfPages = function () {
+    return `${this.pages} pages`
 }
 
 function displayEmptyLibrary() {
